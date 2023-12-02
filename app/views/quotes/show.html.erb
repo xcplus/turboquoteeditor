@@ -1,0 +1,21 @@
+<main class="container mb-xxxxl">
+  <%= link_to sanitize("&larr; Back to quotes"), quotes_path %>
+  <div class="header">
+    <h1>
+      <%= @quote.name %>
+
+      <%= link_to "New date",
+                new_quote_line_item_date_path(@quote),
+                data: { turbo_frame: dom_id(LineItemDate.new) },
+                class: "btn btn--primary" %>
+    </h1>
+  </div>
+  <%= turbo_frame_tag LineItemDate.new %>
+  <%= turbo_frame_tag "line_item_dates" do %>
+    <%= render @line_item_dates, quote: @quote %>
+  <% end %>
+</main>
+
+<%= turbo_frame_tag dom_id(@quote, :total) do %>
+  <%= render "quotes/total", quote: @quote %>
+<% end %>
