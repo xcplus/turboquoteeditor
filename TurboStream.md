@@ -46,7 +46,7 @@ class Quote < ApplicationRecord
                           locals: { quote: self },
                           target: "quotes"
                         }
-    # 唯一不同的是这个html片段会以websocket发送，而不是ajax响应个
+    # 唯一不同的是这个html片段会以websocket发送，而不是ajax响应
     # 上面的broadcast_prepend_to的简写和语法糖
     # after_create_commit -> { broadcast_prepend_to "quotes" }
 end

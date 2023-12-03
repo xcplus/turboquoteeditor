@@ -16,7 +16,7 @@ Turbo Frames是网页的独立部分，可以在不刷新页面和编写一行Ja
 # Turbo Frames 追寻的规则
 1. 当点击Turbo Frame中的链接时，Turbo希望在目标页上有一个相同id的frame。然后目标页中相同id的frame内容替换
 原始页面内相同id的frame.
-比如：我在首页A中有id为first-turbo-frame的turbo-frame标签，这里面有个新增链接是跳转到新增B页面，那么当点击新增链接时，发送请求到后端，后端会在响应页面中找到id为first-turbo-frame的turbo-frame标签，然后将其内容替换到首页A中id为
+比如：我在首页A中有id为first-turbo-frame的turbo-frame标签，这里面有个新增链接是跳转到新增B页面，那么当点击新增链接时，发送请求到后端，后端返回，turbo会在响应页面中找到id为first-turbo-frame的turbo-frame标签，然后将其内容替换到首页A中id为
 first-turbo-frame的turbo-frame标签中。
 2. 单击Turbo Frame内的链接时，如果在目标页中没有找到相同id的turbo-frame标签，则该frame会消失，并且控制台中会记录错误
 Error: The response (200) did not contain the expected <turbo-frame id="first_turbo_frame"> and will be ignored.
